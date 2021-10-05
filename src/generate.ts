@@ -109,7 +109,7 @@ function renderDml(dml: DML) {
             relationFromFields && relationFromFields.includes(field.name)
         )
     )
-    .map(field => `    ${field.type} ${field.name}`)
+    .map(field => `    ${field.type}${!field.isRequired && '?'} ${field.name}`)
     .join('\n')}  
     }
   `
